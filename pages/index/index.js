@@ -2,15 +2,19 @@ import React, { PureComponent } from 'react';
 
 import Head from '../../components/head';
 import Layout from '../../components/layout';
+import HomeContainer from '../../components/home-container';
+import carImage from '../../lib/images/model-r.png';
 
-import style from './style.scss';
+const model = 'R';
 
 class Index extends PureComponent {
 	render() {
 		return (
 			<>
-				<Head title="Build your MODEL R" />
-				<Layout>Layout content</Layout>
+				<Head title={`Build your MODEL ${model}`} />
+				<Layout>
+					<HomeContainer model={model} carImage={carImage} />
+				</Layout>
 			</>
 		);
 	}

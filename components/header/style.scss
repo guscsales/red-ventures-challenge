@@ -2,10 +2,10 @@
 @import '../../lib/scss/mixins';
 
 .header {
-    padding: 5.7rem 0;
+    padding: 5.7rem 0 9.8rem;
     display: flex;
     flex: 0 0 100%;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .nav {
