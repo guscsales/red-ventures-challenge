@@ -1,0 +1,86 @@
+@import '../../lib/scss/colors';
+@import '../../lib/scss/mixins';
+
+.image {
+    height: 650px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    color: $silverChalice;
+    font-size: 2.2rem;
+    list-style: none;
+    margin-bottom: 6rem;
+    background-color: $aquaHaze;
+    padding: 2.9rem 2.2rem 2.9rem 4.2rem;
+    cursor: pointer;
+    position: relative;
+    letter-spacing: 0.28rem;
+
+    @include transition(all 200ms linear);
+
+    &:hover,
+    &.active {
+        color: $bigStone;
+    }
+
+    &.active {
+        .type {
+            color: $tamarillo;
+        }
+
+        &:after {
+            background-color: $tamarillo;
+        }
+
+        .extraPrice {
+            display: block;
+        }
+    }
+
+    &:after {
+        content: '';
+        background-color: $white;
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 100%;
+        position: absolute;
+        right: 2.2rem;
+        top: 50%;
+        margin-top: -1.1rem;
+
+        @include transition(all 200ms linear);
+    }
+
+    > div {
+        margin-right: 5.4rem;
+        min-width: 8.6rem;
+
+        &:first-child {
+            margin-right: 5.9rem;
+            font-size: 3.4rem;
+
+            .kwh {
+                font-weight: 300;
+            }
+
+            .type {
+                font-weight: 500;
+            }
+        }
+    }
+
+    .extraPrice {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        font-size: 2.2rem;
+        color: $tamarillo;
+        font-weight: normal;
+        text-align: right;
+        margin-right: 0;
+        margin-top: 0.5rem;
+        display: none;
+    }
+}
