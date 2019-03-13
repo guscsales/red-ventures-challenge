@@ -1,0 +1,27 @@
+{
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"globals": {
+		"__createTestStore__": true
+	},
+	"extends": [
+		"prettier",
+		"plugin:react/recommended",
+		"plugin:prettier/recommended"
+	],
+	"plugins": ["jest", "react", "prettier"],
+	"env": {
+		"jest/globals": true,
+		"browser": true
+	},
+	"rules": {
+		"prettier/prettier": [
+			"error",
+			{
+				"printWidth": 80
+			}
+		]
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"extends": ["stylelint"],
+	"rules": {
+		"order/properties-order": null,
+		"declaration-property-unit-whitelist": {
+			"font-size": ["px", "em", "rem"]
+		}
+	}
+}
+

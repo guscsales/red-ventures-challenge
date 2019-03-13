@@ -1,0 +1,4 @@
+{
+	"*.js": ["eslint --fix", "git add", "jest --findRelatedTests --coverage"],
+	"*.{css,scss}": ["prettier --write"]
+}
