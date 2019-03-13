@@ -1,0 +1,67 @@
+@import '../../lib/scss/colors';
+@import '../../lib/scss/mixins';
+@lost flexbox flex;
+
+%size {
+    lost-column: 10/12;
+}
+
+%dotSize {
+    width: 44px;
+    height: 44px;
+}
+
+$boxShadowPosition: -4px 4px 13px 0;
+
+.image {
+    margin-top: 9rem;
+}
+
+.description {
+    @extend %size;
+
+    margin-bottom: 10rem;
+}
+
+.options {
+    @extend %size;
+
+    display: flex;
+    justify-content: space-between;
+
+    > li {
+        @extend %dotSize;
+        border: solid 11.2px rgba(112, 112, 112, 0.09);
+        box-shadow: $boxShadowPosition rgba(0, 0, 0, 0);
+        border-radius: 100%;
+        background: $white;
+        cursor: pointer;
+
+        @include transition(all 200ms linear);
+
+        &:hover {
+            border-color: rgba(112, 112, 112, 0.2)
+        }
+
+        &.active {
+            border-color: $oxfordBlue;
+            box-shadow: $boxShadowPosition rgba(0, 0, 0, 0.32);
+            background: $oxfordBlue;
+        }
+
+        > img {
+            @extend %dotSize;
+        }
+    }
+}
+
+.colorInfo {
+    font-size: 2.2rem;
+    color: $bigStone;
+    margin-bottom: 1.2rem;
+}
+
+.extraPrice {
+    font-size: 2.2rem;
+    color: $tamarillo;
+}

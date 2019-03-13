@@ -6,6 +6,8 @@ import classnames from 'classnames';
 import Container from '../container';
 import Title from '../title';
 
+import { toCurrency } from '../../lib/scripts/money';
+
 import grid from '../../lib/scss/grid.scss';
 import style from './style.scss';
 
@@ -62,7 +64,7 @@ class EngineContainer extends React.PureComponent {
 							</div>
 							{Boolean(price) && (
 								<div className={style.extraPrice}>
-									+${price.toLocaleString('pt-BR')}
+									+{toCurrency(price)}
 								</div>
 							)}
 						</li>

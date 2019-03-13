@@ -4,7 +4,7 @@ import style from './style.scss';
 import rvLogo from '../../lib/images/RV-logo.svg';
 
 const Header = () => (
-	<Container>
+	<Container withGrid={false}>
 		<header className={style.header}>
 			<a href="#">
 				<img src={rvLogo} alt="Red Ventures Logo" />

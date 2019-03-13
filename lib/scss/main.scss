@@ -1,5 +1,6 @@
-@import './normalize.scss';
-@import './fonts.scss';
+@import './normalize';
+@import './fonts';
+@import './colors';
 
 html {
     font-size: 10px;
@@ -16,4 +17,9 @@ ul {
     padding: 0;
     margin: 0;
     list-style: none;
+}
+
+p {
+    color: $silverChalice;
+    line-height: normal;
 }

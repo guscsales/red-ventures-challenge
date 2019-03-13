@@ -13,8 +13,8 @@ const ModelInfoBox = ({ value, unit, children }) => (
 	</div>
 );
 
-const HomeContainer = ({ model, carImage, ...props }) => (
-	<Container {...props}>
+const HomeContainer = ({ model, carImage }) => (
+	<Container withGrid={false}>
 		<section className={style.modelPresentation}>
 			<span className={style.preTitle}>Build your</span>
 			<h1 className={style.title}>

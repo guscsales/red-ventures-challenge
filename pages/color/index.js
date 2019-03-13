@@ -2,15 +2,15 @@ import React, { PureComponent } from 'react';
 
 import Head from '../../components/head';
 import Layout from '../../components/layout';
-import EngineContainer from '../../components/engine-container';
+import ColorContainer from '../../components/color-container';
 
 class Index extends PureComponent {
 	render() {
 		return (
 			<>
-				<Head title="Engine" />
+				<Head title="Color" />
 				<Layout>
-					<EngineContainer />
+					<ColorContainer />
 				</Layout>
 			</>
 		);

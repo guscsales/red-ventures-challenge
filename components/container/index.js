@@ -1,15 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import style from './style.scss';
+import classnames from 'classnames';
 
-const Container = ({ children, ...props }) => (
-	<div className={style.container} {...props}>
+const Container = ({ children, withGrid, ...props }) => (
+	<div
+		className={classnames(style.container, { [style.withGrid]: withGrid })}
+		{...props}
+	>
 		{children}
 	</div>
 );
 
 Container.propTypes = {
-	children: PropTypes.node
+	children: propTypes.node,
+	withGrid: propTypes.bool
+};
+
+Container.defaultProps = {
+	withGrid: true
 };
 
 export default Container;
