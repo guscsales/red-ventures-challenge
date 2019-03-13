@@ -1,0 +1,59 @@
+@import '../../lib/scss/colors';
+@import '../../lib/scss/mixins';
+
+.header {
+    padding: 5.7rem 0;
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: space-around;
+}
+
+.nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        > li {
+            display: inline-block;
+            margin-right: 4.5rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                color: $silverChalice;
+                position: relative;
+                text-decoration: none;
+                font-size: 1.6rem;
+                font-stretch: condensed;
+                letter-spacing: 0.9px;
+                @include transition(color 200ms linear);
+
+                &:before {
+                    content: '';
+                    width: 0px;
+                    height: 2px;
+                    background-color: $tamarillo;
+                    opacity: 0;
+                    visibility: hidden;
+                    position: absolute;
+                    left: 0;
+                    bottom: -1px;
+                    @include transition(all 200ms ease-out);
+                }
+
+                &:hover {
+                    color: $bigStone;
+                    
+                    &:before {
+                        width: 51px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}

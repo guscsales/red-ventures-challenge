@@ -1,7 +1,6 @@
 const withCss = require('@zeit/next-css');
 const withSass = require('@zeit/next-sass');
 const withCustomLoaders = require('./lib/next-utils/with-custom-loaders');
-const withCustomPlugins = require('./lib/next-utils/with-custom-plugins');
 const { NODE_ENV } = process.env;
 
 const sequence = (...fns) => data =>
@@ -40,12 +39,7 @@ const cssConfig = {
 	}
 };
 
-module.exports = sequence(
-	withCustomPlugins,
-	withCustomLoaders,
-	withSass,
-	withCss
-)({
+module.exports = sequence(withCustomLoaders, withSass, withCss)({
 	customLoaders,
 	...cssConfig,
 	...nextConfig

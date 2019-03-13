@@ -4,6 +4,7 @@ import Error from 'next/error';
 import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
 import { initializeStore } from '../store';
+import '../lib/scss/main.scss';
 
 class PaymentCollector extends App {
 	getError() {
