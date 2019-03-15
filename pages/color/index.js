@@ -4,7 +4,7 @@ import Head from '../../components/head';
 import Layout from '../../components/layout';
 import ColorContainer from '../../components/color-container';
 
-class Index extends PureComponent {
+class Color extends PureComponent {
 	render() {
 		return (
 			<>
@@ -17,4 +17,4 @@ class Index extends PureComponent {
 	}
 }
 
-export default Index;
+export default Color;

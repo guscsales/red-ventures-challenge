@@ -1,7 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import classnames from 'classnames';
 
 import Container from '../container';
 import Title from '../title';
@@ -17,7 +16,8 @@ import dotGrey from '../../lib/images/dot-grey.png';
 
 class ColorContainer extends React.PureComponent {
 	static propTypes = {
-		items: propTypes.array
+		items: propTypes.array,
+		description: propTypes.string
 	};
 
 	constructor() {

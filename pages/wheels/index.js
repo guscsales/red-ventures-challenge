@@ -2,19 +2,19 @@ import React, { PureComponent } from 'react';
 
 import Head from '../../components/head';
 import Layout from '../../components/layout';
-import EngineContainer from '../../components/engine-container';
+import WheelsContainer from '../../components/wheel-container';
 
-class Engine extends PureComponent {
+class Wheels extends PureComponent {
 	render() {
 		return (
 			<>
-				<Head title="Engine" />
+				<Head title="Wheels" />
 				<Layout>
-					<EngineContainer />
+					<WheelsContainer />
 				</Layout>
 			</>
 		);
 	}
 }
 
-export default Engine;
+export default Wheels;
