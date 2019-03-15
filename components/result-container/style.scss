@@ -1,0 +1,35 @@
+@import '../../lib/scss/colors';
+@import '../../lib/scss/patterns';
+
+.modelType {
+  font-weight: 400;
+
+  span {
+    color: $spotlight;
+  }
+}
+
+.rowInfo {
+  font-size: 2.2rem;
+  margin-bottom: 4rem;
+
+  &Big {
+    font-size: 3.2rem;
+  }
+}
+
+.spotlight {
+  color: $spotlight;
+  text-align: right;
+}
+
+.separator {
+  margin-bottom: 4rem;
+}
+
+.rebuild {
+  @extend %actionLink;
+
+  margin-top: 8.2rem;
+  margin-bottom: 9.9rem;
+}

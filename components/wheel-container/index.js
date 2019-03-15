@@ -40,6 +40,7 @@ class WheelContainer extends React.PureComponent {
 
 					return (
 						<li
+							key={id}
 							className={optionCx}
 							onClick={this.handleChangeWhell.bind(this, index)}
 						>

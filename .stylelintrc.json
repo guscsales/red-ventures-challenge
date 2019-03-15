@@ -1,10 +1,17 @@
 {
-	"extends": ["stylelint"],
+	"extends": ["stylelint-config-standard", "stylelint-config-lost"],
+	"plugins": ["stylelint-order", "stylelint-scss"],
 	"rules": {
-		"order/properties-order": null,
+		"font-family-no-missing-generic-family-keyword": null,
 		"declaration-property-unit-whitelist": {
-			"font-size": ["px", "em", "rem"]
-		}
+			"font-size": ["px", "em", "rem", "%"]
+		},
+		"at-rule-no-unknown": null,
+		"scss/at-rule-no-unknown": [
+			true,
+			{
+				"ignoreAtRules": ["lost"]
+			}
+		]
 	}
 }
-

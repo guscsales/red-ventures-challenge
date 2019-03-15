@@ -4,7 +4,7 @@ import Container from '../container';
 import style from './style.scss';
 import arrowSvg from '../../lib/images/arrow.svg';
 
-const ModelInfoBox = ({ value, unit, children }) => (
+export const ModelInfoBox = ({ value, unit, children }) => (
 	<div className={style.modelInfoBox}>
 		<span className={style.mainInfo}>
 			{value} <small>{unit}</small>
@@ -12,6 +12,12 @@ const ModelInfoBox = ({ value, unit, children }) => (
 		<span className={style.complementInfo}>{children}</span>
 	</div>
 );
+
+ModelInfoBox.propTypes = {
+	value: propTypes.string,
+	unit: propTypes.string,
+	children: propTypes.node
+};
 
 const HomeContainer = ({ model, carImage }) => (
 	<Container withGrid={false}>

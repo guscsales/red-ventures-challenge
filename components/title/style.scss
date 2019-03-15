@@ -1,13 +1,14 @@
 @import '../../lib/scss/colors';
 
 .h1 {
-    font-size: 4.5rem;
-    font-weight: 300;
-    letter-spacing: 0.38rem;
-    color: $bigStone;
-    margin-bottom: 4rem;
+  font-size: 4.5rem;
+  font-weight: 300;
+  letter-spacing: 0.38rem;
+  color: $bigStone;
+  margin-bottom: 4rem;
+  margin-top: 0;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }

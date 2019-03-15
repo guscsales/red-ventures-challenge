@@ -3,23 +3,30 @@
 @import './colors';
 
 html {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 body {
-    font-family: 'Saira Condensed';
-    font-weight: normal;
-    font-size: 1.6rem;
-    font-stretch: condensed;
+  font-family: 'Saira Condensed';
+  font-weight: normal;
+  font-size: 1.6rem;
+  font-stretch: condensed;
 }
 
 ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 p {
-    color: $silverChalice;
-    line-height: normal;
+  color: $silverChalice;
+  line-height: normal;
+}
+
+hr {
+  height: 1px;
+  background-color: rgba(151, 151, 151, 0.42);
+  border: 0;
+  margin: 0;
 }

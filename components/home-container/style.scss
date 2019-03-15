@@ -1,97 +1,88 @@
 @import '../../lib/scss/colors';
+@import '../../lib/scss/patterns';
 
 .modelPresentation {
-    position: relative;
-    margin-left: 110px;
-    margin-top: 55px;
+  position: relative;
+  margin-left: 110px;
+  margin-top: 55px;
 }
 
 .preTitle {
-    font-size: 3rem;
-    font-weight: 500;
-    letter-spacing: 1.18rem;
-    color: $tamarillo;
-    display: inline-block;
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 1.18rem;
+  color: $spotlight;
+  display: inline-block;
 }
 
 .title {
-    font-size: 15rem;
-    font-weight: 300;
-    letter-spacing: 1.25rem;
-    color: $bigStone;
-    margin: 0;
-    margin-left: -9px;
-    text-transform: uppercase;
+  font-size: 15rem;
+  font-weight: 300;
+  letter-spacing: 1.25rem;
+  color: $bigStone;
+  margin: 0;
+  margin-left: -9px;
+  text-transform: uppercase;
 
-    span {
-        color: $tamarillo;
-        margin-left: 1.8rem;
-        font-weight: 500;
-    }
+  span {
+    color: $spotlight;
+    margin-left: 1.8rem;
+    font-weight: 500;
+  }
 }
 
 .carImage {
-    position: absolute;
-    top: 130px;
-    left: 190px;
+  position: absolute;
+  top: 130px;
+  left: 190px;
 }
 
 .begin {
-    font-weight: 500;
-    letter-spacing: 0.94rem;
-    color: $bigStone;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 18.5rem;
-    position: relative;
-    z-index: 1;
+  @extend %actionLink;
 
-    img {
-        padding-left: 1rem;
-    }
+  margin-top: 18.5rem;
 }
 
 .modelInfo {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3rem;
-    margin-top: 12.9rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  margin-top: 12.9rem;
 }
 
 $lineWidth: 107px;
 
 .modelInfoBox {
-    min-width: $lineWidth;
+  min-width: $lineWidth;
 }
 
 .mainInfo {
-    display: block;
-    font-size: 4.2rem;
-    font-weight: 500;
-    color: $tamarillo;
+  display: block;
+  font-size: 4.2rem;
+  font-weight: 500;
+  color: $spotlight;
 
-    small {
-        font-size: 1.5rem;
-    }
+  small {
+    font-size: 1.5rem;
+  }
 }
 
 .complementInfo {
-    display: block;
-    font-size: 1.8rem;
-    font-weight: 300;
-    letter-spacing: 0.15rem;
-    color: $bigStone;
-    position: relative;
-    padding-bottom: 8px;
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+  color: $bigStone;
+  position: relative;
+  padding-bottom: 8px;
 
-    &:before {
-        content: '';
-        width: $lineWidth;
-        height: 2px;
-        background-color: $tamarillo;
-        position: absolute;
-        left: 0;
-        bottom: 0px;
-    }
+  &::before {
+    content: '';
+    width: $lineWidth;
+    height: 2px;
+    background-color: $spotlight;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
 }

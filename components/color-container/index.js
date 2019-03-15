@@ -43,6 +43,7 @@ class ColorContainer extends React.PureComponent {
 			<ul className={style.options}>
 				{items.map(({ id, label, dot }, index) => (
 					<li
+						key={id}
 						className={id === currentId ? style.active : ''}
 						onClick={this.handleChangeColor.bind(this, index)}
 					>
