@@ -15,7 +15,7 @@
     "lint": "eslint . --fix && stylelint './**/*.css' './**/*.scss' --fix",
     "postbuild": "next export -o ./_tmp && cp -r ./_tmp/* ./ && rm -rf ./_tmp/",
     "precommit": "lint-staged && npm test",
-    "start": "node ./server/www.js",
+    "start": "npm run local",
     "test": "jest --verbose false --silent"
   },
   "nodemonConfig": {

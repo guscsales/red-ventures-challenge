@@ -1,0 +1,7 @@
+@import '../../lib/scss/media';
+
+@include mobile {
+  .wrapper {
+    overflow-x: hidden;
+  }
+}

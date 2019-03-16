@@ -1,18 +1,82 @@
 @import '../../lib/scss/colors';
 @import '../../lib/scss/mixins';
+@import '../../lib/scss/media';
 
 .header {
-  padding: 5.7rem 0 9.8rem;
+  padding: 3.3rem 0 9.8rem 1.6rem;
   display: flex;
   flex: 0 0 100%;
   justify-content: space-between;
+
+  @include mobile {
+    position: relative;
+  }
+
+  @include desktop {
+    padding: 5.7rem 0 9.8rem;
+  }
+}
+
+@include mobile {
+  .logo {
+    width: 159px;
+  }
 }
 
 .nav {
+  @include mobile {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-left: 5.1rem;
+    margin-left: 2rem;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::before {
+      width: 55px;
+      height: 51px;
+      position: absolute;
+      top: 16px;
+      content: '';
+      left: 19.5rem;
+      z-index: 1;
+      background-image:
+        linear-gradient(
+          to left,
+          rgba(255, 255, 255, 0),
+          $white
+        );
+    }
+
+    &::after {
+      width: 55px;
+      height: 51px;
+      position: absolute;
+      top: 16px;
+      content: '';
+      right: 0;
+      background-image:
+        linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          $white
+        );
+    }
+  }
+
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @include mobile {
+      white-space: nowrap;
+      display: inline-block;
+      padding-right: 5rem;
+    }
 
     > li {
       display: inline-block;

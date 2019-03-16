@@ -7,7 +7,11 @@ const Header = () => (
 	<Container withGrid={false}>
 		<header className={style.header}>
 			<a href="#">
-				<img src={rvLogo} alt="Red Ventures Logo" />
+				<img
+					src={rvLogo}
+					className={style.logo}
+					alt="Red Ventures Logo"
+				/>
 			</a>
 			<nav className={style.nav}>
 				<ul>
