@@ -3,9 +3,12 @@ import propTypes from 'prop-types';
 import style from './style.scss';
 import classnames from 'classnames';
 
-const Container = ({ children, withGrid, ...props }) => (
+const Container = ({ children, withGrid, withBottomSpace, ...props }) => (
 	<div
-		className={classnames(style.container, { [style.withGrid]: withGrid })}
+		className={classnames(style.container, {
+			[style.withGrid]: withGrid,
+			[style.bottomSpace]: withBottomSpace
+		})}
 		{...props}
 	>
 		{children}
@@ -14,11 +17,13 @@ const Container = ({ children, withGrid, ...props }) => (
 
 Container.propTypes = {
 	children: propTypes.node,
-	withGrid: propTypes.bool
+	withGrid: propTypes.bool,
+	withBottomSpace: propTypes.bool
 };
 
 Container.defaultProps = {
-	withGrid: true
+	withGrid: true,
+	withBottomSpace: false
 };
 
 export default Container;

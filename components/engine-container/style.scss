@@ -1,17 +1,32 @@
 @import '../../lib/scss/colors';
 @import '../../lib/scss/mixins';
+@import '../../lib/scss/media';
 
-.image {
-  height: 650px;
+.wrapperImage {
+  @include mobile {
+    height: 150px;
+    text-align: center;
+    margin-bottom: 7rem;
+  }
+
+  .image {
+    @include mobile {
+      @include transform(rotate(90deg) scale(-0.65) translateX(385px));
+    }
+
+    @include desktop {
+      height: 650px;
+    }
+  }
 }
 
 .option {
   display: flex;
   align-items: center;
   color: $silverChalice;
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   list-style: none;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
   background-color: $aquaHaze;
   padding: 2.9rem 2.2rem 2.9rem 4.2rem;
   cursor: pointer;
@@ -20,17 +35,25 @@
 
   @include transition(all 200ms linear);
 
+  @include desktop {
+    margin-bottom: 6rem;
+  }
+
   .extraPrice {
     position: absolute;
     top: 100%;
     right: 0;
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     color: $spotlight;
     font-weight: normal;
     text-align: right;
     margin-right: 0;
     margin-top: 0.5rem;
     display: none;
+
+    @include desktop {
+      font-size: 2.2rem;
+    }
   }
 
   &:hover,
@@ -67,12 +90,22 @@
   }
 
   > div {
-    margin-right: 5.4rem;
-    min-width: 8.6rem;
+    margin-right: 4.4rem;
+    min-width: 5.6rem;
+
+    @include desktop {
+      margin-right: 5.4rem;
+      min-width: 8.6rem;
+    }
 
     &:first-child {
-      margin-right: 5.9rem;
-      font-size: 3.4rem;
+      margin-right: 3.6rem;
+      font-size: 2.2rem;
+
+      @include desktop {
+        margin-right: 5.9rem;
+        font-size: 3.4rem;
+      }
 
       .kwh {
         font-weight: 300;

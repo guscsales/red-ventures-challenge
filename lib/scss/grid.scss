@@ -1,11 +1,9 @@
+@import '../scss/media';
+
 @lost flexbox flex;
 
 .flexContainer {
   lost-flex-container: row;
-}
-
-.half {
-  lost-column: 6/12;
 }
 
 .oneThird {
@@ -18,4 +16,20 @@
 
 .two {
   lost-column: 2/12;
+}
+
+@include mobile {
+  .mHalf {
+    lost-column: 6/12;
+  }
+}
+
+@include desktop {
+  .dHalf {
+    lost-column: 6/12;
+  }
+
+  .dHalfOffset {
+    lost-offset: 6/12;
+  }
 }

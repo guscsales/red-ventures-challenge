@@ -1,5 +1,6 @@
 @import '../../lib/scss/colors';
 @import '../../lib/scss/mixins';
+@import '../../lib/scss/media';
 
 $barHeight: 85px;
 
@@ -10,6 +11,7 @@ $barHeight: 85px;
   position: fixed;
   bottom: 0;
   left: 0;
+  background-color: $white;
 }
 
 .bar {
@@ -17,20 +19,31 @@ $barHeight: 85px;
   align-items: center;
   height: $barHeight;
   color: $bigStone;
+  width: 100%;
 }
 
 .total {
   font-weight: 300;
-  font-size: 3.2rem;
-  letter-spacing: 0.38rem;
+  font-size: 2.8rem;
+  letter-spacing: 0.33rem;
   color: $spotlight;
+
+  @include desktop {
+    font-size: 3.2rem;
+    letter-spacing: 0.38rem;
+  }
 
   small {
     display: block;
-    font-size: 1.6rem;
-    letter-spacing: 0.21rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.18rem;
     font-weight: 600;
     color: $scorpion;
+
+    @include desktop {
+      font-size: 1.6rem;
+      letter-spacing: 0.21rem;
+    }
   }
 }
 
@@ -83,5 +96,13 @@ $barHeight: 85px;
     img {
       @include transform(translateX(3px));
     }
+  }
+}
+
+@include mobile {
+  .model,
+  .engine,
+  .mHide {
+    display: none;
   }
 }

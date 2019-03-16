@@ -37,15 +37,15 @@ class ResultContainer extends React.PureComponent {
 
 	render() {
 		return (
-			<Container>
-				<div className={grid.half}>
+			<Container withBottomSpace>
+				<div className={grid.dHalf}>
 					<img
 						className={style.image}
 						src="https://bit.ly/2onwCX5"
 						alt=""
 					/>
 				</div>
-				<section className={grid.half}>
+				<section className={grid.dHalf}>
 					<Title>
 						Your{' '}
 						<span className={style.modelType}>

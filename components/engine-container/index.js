@@ -81,21 +81,26 @@ class EngineContainer extends React.PureComponent {
 		const { id, type, kwh, image } = items[currentIndex];
 
 		return (
-			<Container>
-				<div className={grid.half}>
-					<img
-						className={style.image}
-						src={image}
-						alt={`Engine ${kwh} ${type}`}
-					/>
-				</div>
-				<div className={grid.half}>
-					<Title>Engine</Title>
-
-					{this.getEngineOptions(items, id)}
-				</div>
-				<ResultBar />
-			</Container>
+			<>
+				<Container withGrid={false}>
+					<div className={classnames(grid.dHalf, grid.dHalfOffset)}>
+						<Title>Engine</Title>
+					</div>
+				</Container>
+				<Container withBottomSpace>
+					<div className={classnames(grid.dHalf, style.wrapperImage)}>
+						<img
+							className={style.image}
+							src={image}
+							alt={`Engine ${kwh} ${type}`}
+						/>
+					</div>
+					<div className={grid.dHalf}>
+						{this.getEngineOptions(items, id)}
+					</div>
+					<ResultBar />
+				</Container>
+			</>
 		);
 	}
 }

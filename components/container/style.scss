@@ -2,6 +2,8 @@
 
 .container {
   width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 
   @include desktop {
     width: 1214px;
@@ -12,7 +14,10 @@
 
 @include desktop {
   .withGrid {
-    width: auto;
-    lost-center: 1214px;
+    display: flex;
   }
+}
+
+.bottomSpace {
+  padding-bottom: 13rem;
 }

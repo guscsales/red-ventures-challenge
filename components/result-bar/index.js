@@ -15,7 +15,13 @@ class ResultBar extends React.PureComponent {
 			<div className={style.wrapper}>
 				<Container>
 					<div className={style.bar}>
-						<div className={classnames(grid.two, style.total)}>
+						<div
+							className={classnames(
+								grid.two,
+								grid.mHalf,
+								style.total
+							)}
+						>
 							<small>Total</small>
 							$65.000
 						</div>
@@ -25,14 +31,14 @@ class ResultBar extends React.PureComponent {
 						<div className={classnames(grid.two, style.engine)}>
 							75 <span>P</span>
 						</div>
-						<div className={grid.two}>
+						<div className={classnames(grid.two, style.mHide)}>
 							<img
 								src={dotRed}
 								className={style.color}
 								alt="Color"
 							/>
 						</div>
-						<div className={grid.two}>
+						<div className={classnames(grid.two, style.mHide)}>
 							<img
 								src={wheel}
 								className={style.wheel}
@@ -40,7 +46,11 @@ class ResultBar extends React.PureComponent {
 							/>
 						</div>
 						<div
-							className={classnames(grid.two, style.wrapperNext)}
+							className={classnames(
+								grid.two,
+								grid.mHalf,
+								style.wrapperNext
+							)}
 						>
 							<div className={style.next}>
 								next <img src={arrowSvg} alt="Arrow" />

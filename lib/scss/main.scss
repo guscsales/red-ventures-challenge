@@ -1,6 +1,7 @@
 @import './normalize';
 @import './fonts';
 @import './colors';
+@import './media';
 
 html {
   font-size: 10px;
@@ -11,6 +12,10 @@ body {
   font-weight: normal;
   font-size: 1.6rem;
   font-stretch: condensed;
+
+  @include desktop {
+    padding-bottom: 3rem;
+  }
 }
 
 ul {

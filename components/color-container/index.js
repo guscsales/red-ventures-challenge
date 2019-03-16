@@ -61,8 +61,8 @@ class ColorContainer extends React.PureComponent {
 		const { id, label, image, price } = items[currentIndex];
 
 		return (
-			<Container>
-				<div className={grid.half}>
+			<Container withBottomSpace>
+				<div className={grid.dHalf}>
 					<img
 						className={style.image}
 						src={image}
@@ -73,7 +73,7 @@ class ColorContainer extends React.PureComponent {
 						{Boolean(price) ? `+${toCurrency(price)}` : 'Included'}
 					</div>
 				</div>
-				<div className={grid.half}>
+				<div className={grid.dHalf}>
 					<Title>Color</Title>
 
 					<p className={style.description}>{description}</p>
