@@ -1,10 +1,21 @@
 @import '../../lib/scss/colors';
 @import '../../lib/scss/patterns';
+@import '../../lib/scss/media';
 
 .modelPresentation {
   position: relative;
-  margin-left: 110px;
   margin-top: 55px;
+
+  @include mobile {
+    width: 352px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include desktop {
+    margin-left: 110px;
+    margin-left: 42px;
+  }
 }
 
 .preTitle {
@@ -16,13 +27,19 @@
 }
 
 .title {
-  font-size: 15rem;
+  font-size: 9rem;
   font-weight: 300;
-  letter-spacing: 1.25rem;
+  letter-spacing: 0.75rem;
   color: $bigStone;
   margin: 0;
-  margin-left: -9px;
   text-transform: uppercase;
+  margin-left: -5px;
+
+  @include desktop {
+    font-size: 15rem;
+    letter-spacing: 1.25rem;
+    margin-left: -9px;
+  }
 
   span {
     color: $spotlight;
@@ -33,34 +50,64 @@
 
 .carImage {
   position: absolute;
-  top: 130px;
-  left: 190px;
+  top: 84px;
+  left: 0;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  @include desktop {
+    top: 130px;
+    left: 190px;
+  }
 }
 
 .begin {
   @extend %actionLink;
 
-  margin-top: 18.5rem;
+  margin-top: 13.5rem;
+
+  @include desktop {
+    margin-top: 18.5rem;
+  }
 }
 
 .modelInfo {
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
-  margin-top: 12.9rem;
+  margin-top: 6rem;
+
+  @include mobile {
+    padding: 0 1.6rem;
+  }
+
+  @include desktop {
+    margin-top: 12.9rem;
+  }
 }
 
-$lineWidth: 107px;
+$lineWidthMobile: 88px;
+$lineWidthDesktop: 107px;
 
 .modelInfoBox {
-  min-width: $lineWidth;
+  min-width: $lineWidthMobile;
+
+  @include desktop {
+    min-width: $lineWidthDesktop;
+  }
 }
 
 .mainInfo {
   display: block;
-  font-size: 4.2rem;
+  font-size: 3.2rem;
   font-weight: 500;
   color: $spotlight;
+
+  @include desktop {
+    font-size: 4.2rem;
+  }
 
   small {
     font-size: 1.5rem;
@@ -69,20 +116,28 @@ $lineWidth: 107px;
 
 .complementInfo {
   display: block;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 300;
   letter-spacing: 0.15rem;
   color: $bigStone;
   position: relative;
   padding-bottom: 8px;
 
+  @include desktop {
+    font-size: 1.8rem;
+  }
+
   &::before {
     content: '';
-    width: $lineWidth;
+    width: $lineWidthMobile;
     height: 2px;
     background-color: $spotlight;
     position: absolute;
     left: 0;
     bottom: 0;
+
+    @include desktop {
+      width: $lineWidthDesktop;
+    }
   }
 }

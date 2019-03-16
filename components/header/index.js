@@ -16,7 +16,9 @@ const Header = () => (
 			<nav className={style.nav}>
 				<ul>
 					<li>
-						<a href="#">Model R</a>
+						<a href="#" className={style.active}>
+							Model R
+						</a>
 					</li>
 					<li>
 						<a href="#">Model IQ</a>
