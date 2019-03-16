@@ -1,0 +1,87 @@
+@import '../../lib/scss/colors';
+@import '../../lib/scss/mixins';
+
+$barHeight: 85px;
+
+.wrapper {
+  width: 100%;
+  height: $barHeight;
+  box-shadow: 8px 0 47px 0 rgba(0, 0, 0, 0.08);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  height: $barHeight;
+  color: $bigStone;
+}
+
+.total {
+  font-weight: 300;
+  font-size: 3.2rem;
+  letter-spacing: 0.38rem;
+  color: $spotlight;
+
+  small {
+    display: block;
+    font-size: 1.6rem;
+    letter-spacing: 0.21rem;
+    font-weight: 600;
+    color: $scorpion;
+  }
+}
+
+.model {
+  font-size: 1.6rem;
+  letter-spacing: 0.21rem;
+}
+
+.engine {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+
+  span {
+    color: $spotlight;
+  }
+}
+
+.color {
+  width: 22px;
+  height: 22px;
+}
+
+.wheel {
+  width: 46px;
+  height: 38px;
+}
+
+.wrapperNext {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.next {
+  display: flex;
+  align-items: center;
+  font-size: 2.2rem;
+  letter-spacing: 0.28rem;
+  cursor: pointer;
+
+  img {
+    width: 2rem;
+    height: 1.7rem;
+    margin-left: 1.2rem;
+
+    @include transition(transform 200ms linear);
+  }
+
+  &:hover {
+    img {
+      @include transform(translateX(3px));
+    }
+  }
+}

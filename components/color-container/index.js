@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Container from '../container';
 import Title from '../title';
+import ResultBar from '../result-bar';
 
 import { toCurrency } from '../../lib/scripts/money';
 
@@ -79,6 +80,7 @@ class ColorContainer extends React.PureComponent {
 
 					{this.getColorsOptions(items, id)}
 				</div>
+				<ResultBar />
 			</Container>
 		);
 	}

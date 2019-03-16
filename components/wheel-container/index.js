@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 import Container from '../container';
 import Title from '../title';
+import ResultBar from '../result-bar';
 
 import { toCurrency } from '../../lib/scripts/money';
 
@@ -75,6 +76,7 @@ class WheelContainer extends React.PureComponent {
 					<Title center>Wheels</Title>
 				</Container>
 				<Container>{this.getWheelsOptions(items, id)}</Container>
+				<ResultBar />
 			</>
 		);
 	}

@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 import Container from '../container';
 import Title from '../title';
+import ResultBar from '../result-bar';
 
 import { toCurrency } from '../../lib/scripts/money';
 
@@ -93,6 +94,7 @@ class EngineContainer extends React.PureComponent {
 
 					{this.getEngineOptions(items, id)}
 				</div>
+				<ResultBar />
 			</Container>
 		);
 	}
