@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 
 import Container from '../container';
 import Title from '../title';
@@ -61,27 +62,34 @@ class ColorContainer extends React.PureComponent {
 		const { id, label, image, price } = items[currentIndex];
 
 		return (
-			<Container withBottomSpace>
-				<div className={grid.dHalf}>
-					<img
-						className={style.image}
-						src={image}
-						alt={`Color ${label}`}
-					/>
-					<div className={style.colorInfo}>{label}</div>
-					<div className={style.extraPrice}>
-						{Boolean(price) ? `+${toCurrency(price)}` : 'Included'}
+			<>
+				<Container>
+					<div className={classnames(grid.dHalf, grid.dHalfOffset)}>
+						<Title>Color</Title>
+
+						<p className={style.description}>{description}</p>
 					</div>
-				</div>
-				<div className={grid.dHalf}>
-					<Title>Color</Title>
-
-					<p className={style.description}>{description}</p>
-
-					{this.getColorsOptions(items, id)}
-				</div>
-				<ResultBar />
-			</Container>
+				</Container>
+				<Container withBottomSpace>
+					<div className={classnames(grid.dHalf, style.carInfo)}>
+						<img
+							className={style.image}
+							src={image}
+							alt={`Color ${label}`}
+						/>
+						<div className={style.colorInfo}>{label}</div>
+						<div className={style.extraPrice}>
+							{Boolean(price)
+								? `+${toCurrency(price)}`
+								: 'Included'}
+						</div>
+					</div>
+					<div className={grid.dHalf}>
+						{this.getColorsOptions(items, id)}
+					</div>
+					<ResultBar />
+				</Container>
+			</>
 		);
 	}
 }

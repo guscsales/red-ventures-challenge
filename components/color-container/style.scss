@@ -1,10 +1,13 @@
 @import '../../lib/scss/colors';
 @import '../../lib/scss/mixins';
+@import '../../lib/scss/media';
 
 @lost flexbox flex;
 
 %size {
-  lost-column: 10/12;
+  @include desktop {
+    lost-column: 10/12;
+  }
 }
 
 %dotSize {
@@ -15,13 +18,21 @@
 $boxShadowPosition: -4px 4px 13px 0;
 
 .image {
-  margin-top: 9rem;
+  @include mobile {
+    width: 100%;
+  }
+
+  @include desktop {
+    margin-top: 9rem;
+  }
 }
 
 .description {
   @extend %size;
 
-  margin-bottom: 10rem;
+  @include desktop {
+    margin-bottom: 10rem;
+  }
 }
 
 .options {
@@ -29,6 +40,10 @@ $boxShadowPosition: -4px 4px 13px 0;
 
   display: flex;
   justify-content: space-between;
+
+  @include mobile {
+    margin-top: 6rem;
+  }
 
   > li {
     @extend %dotSize;
@@ -54,6 +69,12 @@ $boxShadowPosition: -4px 4px 13px 0;
     > img {
       @extend %dotSize;
     }
+  }
+}
+
+@include mobile {
+  .carInfo {
+    text-align: center;
   }
 }
 
