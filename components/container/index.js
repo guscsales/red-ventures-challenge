@@ -3,27 +3,41 @@ import propTypes from 'prop-types';
 import style from './style.scss';
 import classnames from 'classnames';
 
-const Container = ({ children, withGrid, withBottomSpace, ...props }) => (
-	<div
-		className={classnames(style.container, {
-			[style.withGrid]: withGrid,
-			[style.bottomSpace]: withBottomSpace
-		})}
-		{...props}
-	>
-		{children}
-	</div>
-);
+const Container = ({
+	children,
+	withGrid,
+	withBottomSpace,
+	className,
+	...props
+}) => {
+	return (
+		<div
+			className={classnames(
+				style.container,
+				{
+					[style.withGrid]: withGrid,
+					[style.bottomSpace]: withBottomSpace
+				},
+				className
+			)}
+			{...props}
+		>
+			{children}
+		</div>
+	);
+};
 
 Container.propTypes = {
 	children: propTypes.node,
 	withGrid: propTypes.bool,
-	withBottomSpace: propTypes.bool
+	withBottomSpace: propTypes.bool,
+	className: propTypes.string
 };
 
 Container.defaultProps = {
 	withGrid: true,
-	withBottomSpace: false
+	withBottomSpace: false,
+	className: ''
 };
 
 export default Container;

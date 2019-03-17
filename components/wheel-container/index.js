@@ -35,7 +35,7 @@ class WheelContainer extends React.PureComponent {
 		return (
 			<ul className={style.options}>
 				{items.map(({ id, label, image, price }, index) => {
-					const optionCx = classnames(grid.oneThird, {
+					const optionCx = classnames(grid.dOneThird, {
 						[style.active]: id === currentId
 					});
 
@@ -73,9 +73,11 @@ class WheelContainer extends React.PureComponent {
 		return (
 			<>
 				<Container withGrid={false}>
-					<Title center>Wheels</Title>
+					<Title center>Wheel</Title>
 				</Container>
-				<Container>{this.getWheelsOptions(items, id)}</Container>
+				<Container className={style.wrapper}>
+					{this.getWheelsOptions(items, id)}
+				</Container>
 				<ResultBar />
 			</>
 		);

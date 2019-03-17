@@ -25,15 +25,10 @@
 
 .nav {
   @include mobile {
-    overflow-x: scroll;
-    overflow-y: hidden;
+    @include mobileScroll;
+
     padding-left: 5.1rem;
     margin-left: 2rem;
-    -webkit-overflow-scrolling: touch;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
 
     &::before {
       width: 55px;
