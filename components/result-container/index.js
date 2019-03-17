@@ -37,41 +37,49 @@ class ResultContainer extends React.PureComponent {
 
 	render() {
 		return (
-			<Container withBottomSpace>
-				<div className={grid.dHalf}>
-					<img
-						className={style.image}
-						src="https://bit.ly/2onwCX5"
-						alt=""
-					/>
-				</div>
-				<section className={grid.dHalf}>
-					<Title>
-						Your{' '}
-						<span className={style.modelType}>
-							Model <span>R</span>
-						</span>
-					</Title>
+			<>
+				<Container withGrid={false}>
+					<div className={classnames(grid.dHalf, grid.dHalfOffset)}>
+						<Title>
+							Your{' '}
+							<span className={style.modelType}>
+								Model <span>R</span>
+							</span>
+						</Title>
+					</div>
+				</Container>
+				<Container withBottomSpace>
+					<div className={classnames(grid.dHalf, style.wrapperImage)}>
+						<img
+							className={style.image}
+							src="https://bit.ly/2onwCX5"
+							alt=""
+						/>
+					</div>
+					<section className={grid.dHalf}>
+						<RowInfo title="Starting price" value="$63.000" />
+						<hr className={style.separator} />
+						<RowInfo
+							title="75 P - 75 kWh - 275 miles range"
+							value="+ $5.500"
+						/>
+						<RowInfo
+							title="Metallic Vermilion Paint"
+							value="Included"
+						/>
+						<RowInfo
+							title='22" Performance Carbon'
+							value="+ $2.000"
+						/>
+						<hr className={style.separator} />
+						<RowInfo title="Final Price" value="$71.000" big />
 
-					<RowInfo title="Starting price" value="$63.000" />
-					<hr className={style.separator} />
-					<RowInfo
-						title="75 P - 75 kWh - 275 miles range"
-						value="+ $5.500"
-					/>
-					<RowInfo
-						title="Metallic Vermilion Paint"
-						value="Included"
-					/>
-					<RowInfo title='22" Performance Carbon' value="+ $2.000" />
-					<hr className={style.separator} />
-					<RowInfo title="Final Price" value="$71.000" big />
-
-					<a href="" className={style.rebuild}>
-						Rebuild <img src={rebuildSvg} alt="Rebuild Icon" />
-					</a>
-				</section>
-			</Container>
+						<a href="" className={style.rebuild}>
+							Rebuild <img src={rebuildSvg} alt="Rebuild Icon" />
+						</a>
+					</section>
+				</Container>
+			</>
 		);
 	}
 }

@@ -1,5 +1,17 @@
 @import '../../lib/scss/colors';
 @import '../../lib/scss/patterns';
+@import '../../lib/scss/media';
+
+@include mobile {
+  .wrapperImage {
+    text-align: center;
+  }
+
+  .image {
+    width: calc(100% - 2rem);
+    margin: 2rem 0 8rem;
+  }
+}
 
 .modelType {
   font-weight: 400;
@@ -10,11 +22,20 @@
 }
 
 .rowInfo {
-  font-size: 2.2rem;
-  margin-bottom: 4rem;
+  font-size: 1.8rem;
+  margin-bottom: 3.4rem;
 
   &Big {
-    font-size: 3.2rem;
+    font-size: 2.6rem;
+  }
+
+  @include desktop {
+    font-size: 2.2rem;
+    margin-bottom: 4rem;
+
+    &Big {
+      font-size: 3.2rem;
+    }
   }
 }
 
@@ -24,12 +45,20 @@
 }
 
 .separator {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+
+  @include desktop {
+    margin-bottom: 4rem;
+  }
 }
 
 .rebuild {
   @extend %actionLink;
 
-  margin-top: 8.2rem;
-  margin-bottom: 9.9rem;
+  margin-top: 9.2rem;
+
+  @include desktop {
+    margin-top: 8.2rem;
+    margin-bottom: 9.9rem;
+  }
 }
