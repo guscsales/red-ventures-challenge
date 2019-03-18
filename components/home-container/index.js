@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import Link from 'next/link';
 import Container from '../container';
 import style from './style.scss';
 import arrowSvg from '../../lib/images/arrow.svg';
@@ -32,9 +33,11 @@ const HomeContainer = ({ model, carImage }) => (
 				className={style.carImage}
 			/>
 		</section>
-		<a href="#" className={style.begin}>
-			BEGIN <img src={arrowSvg} alt="Begin arrow" />
-		</a>
+		<Link href="/engine">
+			<a className={style.begin}>
+				BEGIN <img src={arrowSvg} alt="Begin arrow" />
+			</a>
+		</Link>
 		<section className={style.modelInfo}>
 			<ModelInfoBox value="2.5" unit="s">
 				From 0 to 100

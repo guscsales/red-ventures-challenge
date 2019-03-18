@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Container from '../container';
 import style from './style.scss';
 import rvLogo from '../../lib/images/RV-logo.svg';
@@ -16,9 +17,9 @@ const Header = () => (
 			<nav className={style.nav}>
 				<ul>
 					<li>
-						<a href="#" className={style.active}>
-							Model R
-						</a>
+						<Link href="/">
+							<a className={style.active}>Model R</a>
+						</Link>
 					</li>
 					<li>
 						<a href="#">Model IQ</a>

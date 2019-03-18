@@ -7,6 +7,7 @@ import axios from 'axios';
 
 import { initializeStore } from '../store';
 import { setFullData } from '../actions/data';
+import { setCurrentPrice, setAccumulatorPrice } from '../actions/result';
 
 import '../lib/scss/main.scss';
 
@@ -16,20 +17,36 @@ class PaymentCollector extends App {
 			error: false
 		};
 
-		try {
-			const {
-				store: { dispatch }
-			} = ctx;
+		const { req } = ctx;
 
-			const res = await axios(
-				'https://next.json-generator.com/api/json/get/41ORKNZDU'
-			);
+		if (req) {
+			try {
+				const {
+					store: { dispatch }
+				} = ctx;
 
-			dispatch(setFullData(res.data.data));
-		} catch (e) {
-			console.error(e);
+				const {
+					data: {
+						data,
+						data: { price }
+					}
+				} = await axios(
+					'https://next.json-generator.com/api/json/get/41ORKNZDU'
+				);
 
-			pageProps.error = true;
+				dispatch(setFullData(data));
+				dispatch(
+					setAccumulatorPrice({
+						currentPrice: price,
+						accumulatorPrice: 0
+					})
+				);
+				dispatch(setCurrentPrice(price));
+			} catch (e) {
+				console.error(e);
+
+				pageProps.error = true;
+			}
 		}
 
 		return { pageProps };

@@ -1,11 +1,16 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
+import { bindActionCreators } from 'redux';
+import Router from 'next/router';
 
 import Container from '../container';
 import Title from '../title';
 import ResultBar from '../result-bar';
+
+import * as resultActions from '../../actions/result';
+import { setNextPage } from '../../actions/next-page';
 
 import { toCurrency } from '../../lib/scripts/money';
 
@@ -18,8 +23,11 @@ import dotGrey from '../../lib/images/dot-grey.png';
 
 class ColorContainer extends React.PureComponent {
 	static propTypes = {
-		items: propTypes.array,
-		description: propTypes.string
+		items: PropTypes.array,
+		description: PropTypes.string,
+		currentPrice: PropTypes.number,
+		setColor: PropTypes.func,
+		setAccumulatorPrice: PropTypes.func
 	};
 
 	constructor() {
@@ -30,9 +38,26 @@ class ColorContainer extends React.PureComponent {
 		};
 	}
 
+	componentDidMount() {
+		const { items } = this.props;
+		const { currentIndex } = this.state;
+
+		this.props.setColor(items[currentIndex]);
+		this.props.setNextPage(Router.pathname);
+	}
+
 	handleChangeColor(currentIndex) {
 		this.setState({
 			currentIndex
+		});
+
+		const { items, currentPrice } = this.props;
+		const item = items[currentIndex];
+
+		this.props.setColor(item);
+		this.props.setAccumulatorPrice({
+			currentPrice,
+			accumulatorPrice: item.price
 		});
 	}
 
@@ -97,10 +122,18 @@ class ColorContainer extends React.PureComponent {
 const mapStateToProps = ({
 	data: {
 		color: { description, items }
-	}
+	},
+	result: { currentPrice }
 }) => ({
 	description,
-	items
+	items,
+	currentPrice
 });
 
-export default connect(mapStateToProps)(ColorContainer);
+const mapDispatchToProps = dispatch =>
+	bindActionCreators({ ...resultActions, setNextPage }, dispatch);
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(ColorContainer);

@@ -1,7 +1,9 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
+import { bindActionCreators } from 'redux';
+import Router from 'next/router';
 
 import Container from '../container';
 import Title from '../title';
@@ -9,12 +11,19 @@ import ResultBar from '../result-bar';
 
 import { toCurrency } from '../../lib/scripts/money';
 
+import * as resultActions from '../../actions/result';
+import { setNextPage } from '../../actions/next-page';
+
 import grid from '../../lib/scss/grid.scss';
 import style from './style.scss';
 
 class EngineContainer extends React.PureComponent {
 	static propTypes = {
-		items: propTypes.array
+		items: PropTypes.array,
+		currentPrice: PropTypes.number,
+		setEngine: PropTypes.func,
+		setAccumulatorPrice: PropTypes.func,
+		setNextPage: PropTypes.func
 	};
 
 	constructor() {
@@ -25,9 +34,26 @@ class EngineContainer extends React.PureComponent {
 		};
 	}
 
+	componentDidMount() {
+		const { items } = this.props;
+		const { currentIndex } = this.state;
+
+		this.props.setEngine(items[currentIndex]);
+		this.props.setNextPage(Router.pathname);
+	}
+
 	handleChangeEngine(currentIndex) {
 		this.setState({
 			currentIndex
+		});
+
+		const { items, currentPrice } = this.props;
+		const item = items[currentIndex];
+
+		this.props.setEngine(item);
+		this.props.setAccumulatorPrice({
+			currentPrice,
+			accumulatorPrice: item.price
 		});
 	}
 
@@ -108,9 +134,17 @@ class EngineContainer extends React.PureComponent {
 const mapStateToProps = ({
 	data: {
 		engine: { items }
-	}
+	},
+	result: { currentPrice }
 }) => ({
-	items
+	items,
+	currentPrice
 });
 
-export default connect(mapStateToProps)(EngineContainer);
+const mapDispatchToProps = dispatch =>
+	bindActionCreators({ ...resultActions, setNextPage }, dispatch);
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(EngineContainer);
