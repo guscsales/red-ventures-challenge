@@ -9,7 +9,7 @@ import Container from '../container';
 import Title from '../title';
 
 import { resetResult } from '../../actions/result';
-import { setNextPage } from '../../actions/next-page';
+import { setNextPage } from '../../actions/step';
 
 import { toCurrency } from '../../lib/scripts/money';
 
@@ -59,13 +59,16 @@ class ResultContainer extends React.PureComponent {
 
 	componentDidMount() {
 		const { results, color } = this.props;
-		const image = results.filter(item => item.id === color.id)[0].image;
 
-		this.setState({
-			car: { image, color: color.label }
-		});
+		if (color) {
+			const image = results.filter(item => item.id === color.id)[0].image;
 
-		this.props.setNextPage(Router.pathname);
+			this.setState({
+				car: { image, color: color.label }
+			});
+
+			this.props.setNextPage(Router.pathname);
+		}
 	}
 
 	handleRebuild() {
@@ -164,7 +167,7 @@ const mapStateToProps = ({
 		results: { items: results }
 	},
 	result: { engine, color, wheel, currentPrice },
-	nextPage
+	step: { nextPage }
 }) => ({
 	initialPrice,
 	results,

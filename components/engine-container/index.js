@@ -12,7 +12,7 @@ import ResultBar from '../result-bar';
 import { toCurrency } from '../../lib/scripts/money';
 
 import * as resultActions from '../../actions/result';
-import { setNextPage } from '../../actions/next-page';
+import { setNextPage } from '../../actions/step';
 
 import grid from '../../lib/scss/grid.scss';
 import style from './style.scss';

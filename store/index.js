@@ -4,14 +4,14 @@ import middlewares from './middlewares';
 
 import data from './data';
 import result from './result';
-import nextPage from './next-page';
+import step from './step';
 
 export const initializeStore = (initialState = {}) => {
 	return createStore(
 		combineReducers({
 			data,
 			result,
-			nextPage
+			step
 		}),
 		initialState,
 		composeWithDevTools(applyMiddleware(...middlewares()))

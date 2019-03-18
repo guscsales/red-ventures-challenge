@@ -104,7 +104,7 @@ class ResultBar extends React.PureComponent {
 
 const mapStateToProps = ({
 	result: { engine, color, wheel, accumulatorPrice },
-	nextPage
+	step: { nextPage }
 }) => ({
 	engine,
 	color,

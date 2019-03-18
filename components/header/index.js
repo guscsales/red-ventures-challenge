@@ -7,13 +7,15 @@ import rvLogo from '../../lib/images/RV-logo.svg';
 const Header = () => (
 	<Container withGrid={false}>
 		<header className={style.header}>
-			<a href="#">
-				<img
-					src={rvLogo}
-					className={style.logo}
-					alt="Red Ventures Logo"
-				/>
-			</a>
+			<Link href="/">
+				<a>
+					<img
+						src={rvLogo}
+						className={style.logo}
+						alt="Red Ventures Logo"
+					/>
+				</a>
+			</Link>
 			<nav className={style.nav}>
 				<ul>
 					<li>

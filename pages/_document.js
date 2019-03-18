@@ -5,13 +5,17 @@ class MyDocument extends Document {
 	render() {
 		return (
 			<html>
-				<Head />
-				<head>
+				<Head>
+					<link
+						rel="stylesheet"
+						type="text/css"
+						href="/static/css/nprogress.css"
+					/>
 					<meta
 						name="viewport"
 						content="width=device-width, initial-scale=1"
 					/>
-				</head>
+				</Head>
 				<body>
 					<Main />
 					<NextScript />
