@@ -1,4 +1,4 @@
 export default {
-	nextPage: '',
+	nextPage: '/test',
 	startSteps: true
 };

@@ -89,7 +89,7 @@ class EngineContainer extends React.PureComponent {
 								<span className={style.active}>{range}</span>{' '}
 								miles range
 							</div>
-							{Boolean(price) && (
+							{price > 0 && (
 								<div className={style.extraPrice}>
 									+{toCurrency(price)}
 								</div>
