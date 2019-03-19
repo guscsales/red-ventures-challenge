@@ -104,9 +104,7 @@ class ColorContainer extends React.PureComponent {
 						/>
 						<div className={style.colorInfo}>{label}</div>
 						<div className={style.extraPrice}>
-							{Boolean(price)
-								? `+${toCurrency(price)}`
-								: 'Included'}
+							{price > 0 ? `+${toCurrency(price)}` : 'Included'}
 						</div>
 					</div>
 					<div className={grid.dHalf}>
