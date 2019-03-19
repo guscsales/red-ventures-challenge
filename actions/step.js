@@ -1,6 +1,6 @@
-export const setNextPage = currentPage => ({
+export const setNextPage = payload => ({
 	type: 'SET_NEXT_PAGE',
-	currentPage
+	payload
 });
 
 export const setStartSteps = () => ({

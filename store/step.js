@@ -7,10 +7,10 @@ const pages = {
 	result: '/'
 };
 
-export const nextPage = (state = '', { type, currentPage }) => {
+export const nextPage = (state = '', { type, payload }) => {
 	switch (type) {
 		case 'SET_NEXT_PAGE':
-			return pages[currentPage.replace('/', '')];
+			return pages[payload.replace('/', '')];
 
 		default:
 			return state;

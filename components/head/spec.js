@@ -8,6 +8,6 @@ describe('<Head />', () => {
 		const title = wrapper.find('title');
 
 		expect(title.length).toBe(1);
-		expect(title.text()).toBe('test | Red Ventures');
+		expect(title.text()).toBe('test | Build your MODEL R | Red Ventures');
 	});
 });

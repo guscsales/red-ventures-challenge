@@ -23,14 +23,13 @@ export const setCurrentPrice = payload => ({
 	payload
 });
 
-export const resetResult = ({ initialPrice }) => dispatch =>
-	dispatch([
-		setEngine(null),
-		setColor(null),
-		setWheel(null),
-		setAccumulatorPrice({
-			currentPrice: initialPrice,
-			accumulatorPrice: 0
-		}),
-		setCurrentPrice(initialPrice)
-	]);
+export const resetResult = ({ initialPrice }) => [
+	setEngine(null),
+	setColor(null),
+	setWheel(null),
+	setAccumulatorPrice({
+		currentPrice: initialPrice,
+		accumulatorPrice: 0
+	}),
+	setCurrentPrice(initialPrice)
+];

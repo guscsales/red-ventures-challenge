@@ -11,13 +11,9 @@ module.exports = {
 	coveragePathIgnorePatterns: [
 		'test-utils',
 		'.json',
-		'server/routes',
-		'lib/fixtures',
-		'lib/constants',
+		'lib/constants.js',
 		'lib/next-utils',
 		'server/www.js',
-		'types',
-		'config',
 		'pages'
 	],
 	collectCoverage: true
