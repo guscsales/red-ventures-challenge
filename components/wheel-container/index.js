@@ -78,7 +78,7 @@ class WheelContainer extends React.PureComponent {
 							<div className={style.wheelInfo}>
 								<div className={style.label}>{label}</div>
 								<div className={style.extraPrice}>
-									{Boolean(price)
+									{price > 0
 										? `+${toCurrency(price)}`
 										: 'Included'}
 								</div>

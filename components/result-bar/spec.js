@@ -8,11 +8,7 @@ import Router from 'next/router';
 
 import ResultBar from '.';
 
-import {
-	setColor,
-	setAccumulatorPrice,
-	setCurrentPrice
-} from '../../actions/result';
+import { setCurrentPrice } from '../../actions/result';
 
 import fixture from '../../test-utils/fixtures/store';
 

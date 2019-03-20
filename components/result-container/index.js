@@ -18,8 +18,9 @@ import style from './style.scss';
 
 import rebuildSvg from '../../lib/images/rebuild.svg';
 
-export const RowInfo = ({ title, value, big }) => (
+export const RowInfo = ({ id, title, value, big }) => (
 	<div
+		id={id}
 		className={classnames(style.rowInfo, grid.flexContainer, {
 			[style.rowInfoBig]: big
 		})}
@@ -32,6 +33,7 @@ export const RowInfo = ({ title, value, big }) => (
 );
 
 RowInfo.propTypes = {
+	id: PropTypes.string,
 	title: PropTypes.string,
 	value: PropTypes.string,
 	big: PropTypes.bool
@@ -60,6 +62,7 @@ class ResultContainer extends React.PureComponent {
 	componentDidMount() {
 		const { results, color } = this.props;
 
+		/* istanbul ignore else */
 		if (color) {
 			const image = results.filter(item => item.id === color.id)[0].image;
 
@@ -111,6 +114,7 @@ class ResultContainer extends React.PureComponent {
 						<hr className={style.separator} />
 						{engine && (
 							<RowInfo
+								id="engine-info"
 								title={`${engine.kwh} ${engine.type} - ${
 									engine.kwh
 								} kWh - ${engine.range} miles range`}
@@ -123,6 +127,7 @@ class ResultContainer extends React.PureComponent {
 						)}
 						{color && (
 							<RowInfo
+								id="color-info"
 								title={`${color.label} paint`}
 								value={
 									color.price > 0
@@ -133,6 +138,7 @@ class ResultContainer extends React.PureComponent {
 						)}
 						{wheel && (
 							<RowInfo
+								id="wheel-info"
 								title={wheel.label}
 								value={
 									wheel.price > 0

@@ -64,7 +64,7 @@ describe('<EngineContainer />', () => {
 	});
 
 	describe('#render', () => {
-		it('should return price formatted when is greather than zero', () => {
+		it('should return price formatted when is greater than zero', () => {
 			const wrapper = getWrapper();
 
 			wrapper.setState({ currentIndex: 1 });

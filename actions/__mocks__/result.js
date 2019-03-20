@@ -17,3 +17,7 @@ export const setAccumulatorPrice = jest.fn().mockImplementation(() => ({
 export const setCurrentPrice = jest.fn().mockImplementation(() => ({
 	type: Math.random()
 }));
+
+export const resetResult = jest.fn().mockImplementation(() => ({
+	type: Math.random()
+}));
