@@ -51,6 +51,8 @@ You may run unit tests created with jest, just run the command below:
 npm t
 ```
 
+![unit tests](https://i.imgur.com/znIjwad.png)
+
 ## Last words
 
 Thanks for the opportunity, and thanks for read until here, see you around :)
